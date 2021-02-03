@@ -6,7 +6,7 @@
 /*   By: epeters- <epeters-@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 15:47:15 by epeters-          #+#    #+#             */
-/*   Updated: 2021/01/28 20:36:57 by epeters-         ###   ########.fr       */
+/*   Updated: 2021/02/03 17:24:13 by epeters-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	//char	c;
 	char	*filestr;
 	char	*filestr2;
-	char	**lines;
+	char	*line;
 
 	if ((fd = open(path, O_RDONLY)) == -1)
 		return (-1);
@@ -42,15 +42,23 @@ int	main(void)
 	printf("get_next_line...\n");
 	if ((fd = open(path, O_RDONLY)) == -1)
 		return (-1);
-	lines = malloc(sizeof(*lines) * 5);
-	int i = 0;
-	while (i < 5)
-		lines[i++] = 0;
-	printf("Result: %d\n", get_next_line(fd, lines));
-	printf("%s\n", lines[0]);
-	i = 0;
-	while (i < 5)
-		free(lines[i++]);
-	free(lines);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
+	printf("Result: %d\n", get_next_line(fd, &line));
+	printf("%s\n", line);
 	return (0);
 }
